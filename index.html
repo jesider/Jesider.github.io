@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f2e9" media="(prefers-color-scheme: light)">
+<meta name="description" content="Jesider — клиент для Minecraft. Боевые и визуальные модули, гибкие настройки. Тарифы и поддержка в Telegram.">
+<meta name="keywords" content="Jesider, Minecraft, клиент, PvP, ESP, KillAura, мод">
+<meta property="og:title" content="Jesider — больше возможностей в Minecraft">
+<meta property="og:description" content="Клиент Minecraft с боевыми и визуальными модулями. Выбирай настройки под свой стиль.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index,follow">
+<title>Jesider — больше возможностей в Minecraft</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgNyA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InVwcGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIwLjkiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiNmOWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNWRlZWQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsZWZ0IiB4MT0iMCIgeTE9IjAiIHgyPSIuNyIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmNGY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjM2NmZTMiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaWdodCIgeDE9IjAuMiIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ii40OCIgc3RvcC1jb2xvcj0iI2VmZjRmYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I2YzZkZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIHN0cm9rZT0iIzlmYWVjNSIgc3Ryb2tlLXdpZHRoPSIuMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik05LjQgMzAuNSAzMSAxNS45IDMxIDIyLjcgMjIuMSAzMC41WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik0zMyAxNS45IDQ0LjIgMjMuMyAzMyAzMC40WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCNsZWZ0KSIgZD0iTTkuNSAzMi4zIDI4LjkgMzIuMyAyMC4xIDM5LjJaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3VwcGVyKSIgZD0iTTIxLjIgNDAuNCAzMSAzMy42IDMxIDQ4LjFaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3JpZ2h0KSIgZD0iTTMzIDMyLjMgNDMuMiAzMi4zIDMzIDQwLjUgMzMgNDguMSA1NC45IDMyLjIgNDQuMiAyNC45IDMzIDMxLjFaIi8+CiAgPC9nPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii43IiBzdHJva2Utd2lkdGg9Ii4yNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEwLjYgMzAgMzAuNiAxNi41IE0zMy41IDE2LjYgNDMuNCAyMy4zIE0xMC43IDMyLjcgMjcuOSAzMi43IE0yMS45IDQwLjQgMzAuNiAzNC40IE0zNCAzMSA0NC4yIDI1LjYgNTQgMzIuMiIvPjwvZz4KPC9zdmc+Cg==">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+<script>
+  (function(){
+    try {
+      const t = localStorage.getItem('jesider-theme-v2');
+      document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch(e) { document.documentElement.dataset.theme = 'dark'; }
+  })();
+</script>
+
+<style>
+/* ============================================================
+   ROOT — warm amber / dark, liquid glass system v2
+   ============================================================ */
+:root{
+  color-scheme: dark;
+  --bg: #0b0a09;
+  --bg-2: #100e0c;
+  --surface: rgba(28,24,20,.55);
+  --surface-2: rgba(38,32,25,.6);
+  --line: rgba(239,220,190,.14);
+  --line-strong: rgba(239,220,190,.30);
+  --text: #f8f4ec;
+  --muted: #b8ac9d;
+  --accent: #efad51;
+  --accent-2: #ffcd81;
+  --accent-soft: rgba(239,173,81,.15);
+  --ink: #261608;
+
+  --glass-fill: linear-gradient(150deg, rgba(62,52,42,.62), rgba(22,20,18,.55) 48%, rgba(40,33,26,.6));
+  --glass-fill-strong: linear-gradient(150deg, rgba(86,72,56,.76), rgba(26,23,20,.7) 52%, rgba(52,43,34,.7));
+  --glass-line: rgba(244,229,204,.22);
+  --glass-line-strong: rgba(255,236,205,.38);
+  --glass-shadow:
+    0 12px 32px rgba(0,0,0,.3),
+    0 2px 8px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -1px 0 rgba(255,255,255,.03);
+  --glass-shadow-hover:
+    0 26px 52px rgba(0,0,0,.42),
+    0 4px 12px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(255,255,255,.05);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+
+  --header-h: 68px;
+}
+
+[data-theme="light"]{
+  color-scheme: light;
+  --bg: #f7f2e9;
+  --bg-2: #efe7da;
+  --surface: rgba(255,252,246,.72);
+  --surface-2: rgba(245,236,222,.78);
+  --line: rgba(120,95,66,.18);
+  --line-strong: rgba(120,95,66,.36);
+  --text: #241a11;
+  --muted: #5c4d3c;
+  --accent: #d68a2b;
+  --accent-2: #9a5510;
+  --accent-soft: rgba(214,138,43,.16);
+  --ink: #2a1a08;
+
+  --glass-fill: linear-gradient(150deg, rgba(255,255,255,.74), rgba(255,250,242,.55) 48%, rgba(244,232,214,.6));
+  --glass-fill-strong: linear-gradient(150deg, rgba(255,255,255,.85), rgba(255,247,236,.7) 50%, rgba(240,224,198,.7));
+  --glass-line: rgba(140,113,82,.28);
+  --glass-line-strong: rgba(140,113,82,.46);
+  --glass-shadow:
+    0 12px 30px rgba(87,63,39,.14),
+    0 2px 8px rgba(87,63,39,.08),
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 -1px 0 rgba(155,122,82,.08);
+  --glass-shadow-hover:
+    0 22px 44px rgba(87,63,39,.20),
+    0 4px 12px rgba(87,63,39,.12),
+    inset 0 1px 0 rgba(255,255,255,.95),
+    inset 0 -1px 0 rgba(155,122,82,.12);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top: calc(var(--header-h) + 12px)}
+body{
+  font-family:'Nunito', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.55;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color .4s ease, color .4s ease;
+}
+
+body::before{
+  content:"";
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 80% 20%, rgba(239,173,81,.11), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 10% 80%, rgba(239,173,81,.07), transparent 55%);
+  pointer-events: none; z-index: 0;
+}
+[data-theme="light"] body::before{
+  background:
+    radial-gradient(ellipse 90% 60% at 80% 20%, rgba(214,138,43,.11), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 10% 80%, rgba(214,138,43,.07), transparent 55%);
+}
+
+#bg3d{
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+[data-theme="light"] #bg3d{opacity: .7}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+
+h1, h2, h3 { margin: 0; letter-spacing: -.03em; font-weight: 800; }
+p { margin: 0; }
+
+::selection{ background: var(--accent); color: var(--ink); }
+
+:focus-visible{
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible){ outline: none; }
+
+/* Smooth color transitions for theme switch */
+body, .nav, .card, .step, .price-card, .faq-item, .btn, .icon-btn,
+.module-pill {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+/* ============================================================
+   SKIP + HEADER
+   ============================================================ */
+.skip{
+  position: fixed; top:-100px; left:16px; z-index:1000;
+  background: var(--accent); color: var(--ink);
+  padding: 12px 18px; border-radius: 10px; font-weight: 700;
+  transition: top .2s;
+}
+.skip:focus{ top: 12px; }
+
+.site-header{
+  position: fixed;
+  top: 12px; left: 50%;
+  transform: translateX(-50%) translateY(-120%);
+  z-index: 50;
+  width: min(1180px, calc(100% - 28px));
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.site-header.visible{
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 14px 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill-strong);
+  backdrop-filter: blur(24px) saturate(160%) brightness(1.05);
+  -webkit-backdrop-filter: blur(24px) saturate(160%) brightness(1.05);
+  box-shadow: var(--glass-shadow);
+}
+.nav::after{
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,.06));
+  pointer-events: none;
+}
+[data-theme="light"] .nav::after{
+  background: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,.3));
+}
+
+.nav-left{ display:flex; align-items:center; gap: 12px; }
+.nav-links{
+  display: flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; color: var(--muted);
+  justify-content: center;
+  position: relative; z-index: 1;
+}
+.nav-links a{
+  padding: 8px 12px; border-radius: 8px;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover{ color: var(--accent-2); background: rgba(239,173,81,.1); }
+
+.nav-actions{ display:flex; align-items:center; gap: 6px; position: relative; z-index: 1; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height: 44px; padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700; font-size: 14px; line-height:1.1;
+  transition: transform .15s, background .2s, border-color .2s, box-shadow .2s;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.btn::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.14) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:hover::before{ transform: translateX(100%); }
+.btn-primary{
+  background: linear-gradient(145deg, #ffd496, #ebA43f);
+  color: #2b1a0a;
+  border-color: rgba(255,232,186,.7);
+  box-shadow: 0 6px 18px rgba(120,75,20,.25), inset 0 1px 0 rgba(255,255,255,.55);
+}
+.btn-primary:hover{ background: linear-gradient(145deg, #ffe2b0, #f3b459); box-shadow: 0 10px 24px rgba(120,75,20,.32), inset 0 1px 0 rgba(255,255,255,.6); }
+.btn-ghost{
+  background: var(--glass-fill);
+  border-color: var(--glass-line);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.btn-ghost:hover{ border-color: var(--accent); background: rgba(239,173,81,.1); }
+
+.nav .btn{ min-height: 38px; padding: 8px 16px; font-size: 13px; }
+
+.icon-btn{
+  display:inline-grid; place-items:center;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-line);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.icon-btn:active{ transform: scale(.94); }
+.icon-btn:hover{ background: rgba(239,173,81,.16); border-color: var(--accent); color: var(--accent-2); }
+.theme-toggle .theme-moon{ display: none; }
+[data-theme="light"] .theme-toggle .theme-sun{ display: none; }
+[data-theme="light"] .theme-toggle .theme-moon{ display: block; }
+.icon-btn svg{ width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.nav-logo{
+  display: inline-flex; align-items:center; gap: 10px;
+  font-size: 19px; font-weight: 900; letter-spacing: -.04em;
+  color: var(--text);
+  position: relative; z-index: 1;
+}
+.nav-logo-mark{
+  width: 30px; height: 30px;
+  filter: drop-shadow(0 0 10px rgba(239,173,81,.4));
+}
+
+.nav-mobile-name{ display:none; font-weight:800; font-size: 15px; letter-spacing:-.02em; }
+
+.nav-scroll-bar{
+  position: absolute;
+  bottom: -1px; left: 22px; right: 22px;
+  height: 2px;
+  border-radius: 999px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.nav-scroll-bar span{
+  display:block; width:100%; height:100%;
+  background: linear-gradient(90deg, #a75b1e, #f4c47a);
+  transform-origin: left center;
+  transform: scaleX(0);
+  box-shadow: 0 0 12px rgba(239,173,81,.7);
+}
+
+.menu-toggle{ display: none; }
+
+/* Mobile menu */
+.mobile-menu{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0; right: 0;
+  border-radius: 20px;
+  background: var(--glass-fill-strong);
+  backdrop-filter: blur(26px) saturate(160%);
+  -webkit-backdrop-filter: blur(26px) saturate(160%);
+  border: 1px solid var(--glass-line);
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+  padding: 10px;
+  display: none;
+  animation: menuIn .22s ease-out;
+  z-index: 60;
+}
+.mobile-menu.open{ display: block; }
+@keyframes menuIn{
+  from{ opacity: 0; transform: translateY(-8px) scale(.98); }
+  to{ opacity: 1; transform: translateY(0) scale(1); }
+}
+.mobile-menu a{
+  display: flex; align-items:center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 600; font-size: 15px;
+  color: var(--text);
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-menu a:hover,
+.mobile-menu a:active{ background: rgba(239,173,81,.14); }
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+main{ position: relative; z-index: 1; }
+.wrap{
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ============================================================
+   INTRO LOGO
+   ============================================================ */
+.logo-intro{
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 40px 20px 120px;
+}
+.intro-glow{
+  position: absolute;
+  width: min(90vw, 780px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239,173,81,.30), rgba(239,173,81,.10) 42%, transparent 70%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite;
+}
+[data-theme="light"] .intro-glow{
+  background: radial-gradient(circle, rgba(214,138,43,.25), rgba(214,138,43,.08) 42%, transparent 70%);
+}
+@keyframes pulse{
+  0%,100%{ transform: scale(1); opacity: .9; }
+  50%{ transform: scale(1.10); opacity: 1; }
+}
+.intro-logo{
+  position: relative;
+  width: min(80vw, 60vh, 540px);
+  height: auto;
+  filter:
+    drop-shadow(0 4px 10px rgba(71,86,117,.35))
+    drop-shadow(0 0 32px rgba(239,173,81,.6))
+    drop-shadow(0 0 70px rgba(239,173,81,.32));
+  animation: logoFloat 5s ease-in-out infinite;
+  z-index: 3;
+}
+@keyframes logoFloat{
+  0%,100%{ transform: translateY(0) rotate(0); }
+  50%{ transform: translateY(-12px) rotate(-1deg); }
+}
+
+.scroll-cue{
+  position: absolute;
+  bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: var(--muted); font-size: 11px; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 4;
+}
+.scroll-cue-arrow{
+  display: block; font-size: 18px;
+  animation: cueFloat 1.8s ease-in-out infinite;
+}
+@keyframes cueFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(5px); }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position: relative;
+  padding: 100px 0 100px;
+  overflow: hidden;
+}
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 560px;
+}
+.hero-copy{ max-width: 520px; }
+
+.eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 22px;
+}
+.eyebrow .dot{
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink{
+  0%,100%{ opacity: 1; }
+  50%{ opacity: .35; }
+}
+
+.hero h1{
+  font-size: clamp(46px, 6vw, 76px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin-bottom: 22px;
+  font-weight: 900;
+}
+.hero h1 span{
+  display: block;
+  background: linear-gradient(120deg, #ffd496, #efad51 45%, #c9792c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(239,173,81,.4));
+}
+[data-theme="light"] .hero h1 span{
+  background: linear-gradient(120deg, #9a5510, #a85d13 45%, #82400d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: none;
+}
+.hero-copy > p{
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 32px;
+  max-width: 460px;
+}
+.hero-actions{
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 22px;
+}
+.hero-actions .btn{ min-height: 52px; padding: 14px 28px; font-size: 15.5px; }
+.hero-actions .btn-primary{ box-shadow: 0 8px 28px rgba(120,75,20,.32), inset 0 1px 0 rgba(255,255,255,.55); }
+.hero-note{
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--muted); font-size: 13px;
+}
+.hero-note .dot{
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.hero-visual{
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.visual-ring{
+  position: absolute;
+  width: min(90%, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(239,173,81,.22);
+  box-shadow: 0 0 110px rgba(239,173,81,.20), inset 0 0 70px rgba(239,173,81,.10);
+}
+.visual-ring::before, .visual-ring::after{
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(239,173,81,.12);
+}
+.visual-ring::after{
+  inset: -22px;
+  border-style: dashed;
+  opacity: .55;
+  animation: spin 40s linear infinite;
+}
+@keyframes spin{ to{ transform: rotate(360deg); } }
+
+.hero-emblem{
+  position: relative;
+  width: min(70%, 330px);
+  height: auto;
+  filter:
+    drop-shadow(0 2px 4px rgba(71,86,117,.35))
+    drop-shadow(0 0 28px rgba(239,173,81,.7))
+    drop-shadow(0 0 65px rgba(239,173,81,.4));
+  animation: logoFloat 5s ease-in-out infinite;
+  z-index: 3;
+  transform-style: preserve-3d;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section{
+  position: relative;
+  padding: 96px 0;
+  z-index: 1;
+}
+.section-alt{
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(239,173,81,.05), transparent 70%);
+  border-block: 1px solid var(--line);
+}
+
+.section-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 46px;
+}
+.section-heading h2{
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  font-weight: 900;
+}
+.section-heading > p{
+  max-width: 380px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.section-icon{
+  display: inline-grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(145deg, rgba(255,219,162,.3), rgba(143,90,36,.24));
+  border: 1px solid rgba(203,156,98,.55);
+  color: var(--accent-2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.28);
+}
+.section-icon svg{ width: 16px; height: 16px; stroke-width: 2; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.feature-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.card{
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(20px) saturate(160%) brightness(1.02);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) brightness(1.02);
+  box-shadow: var(--glass-shadow);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s, border-color .3s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  will-change: transform;
+}
+.card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(255,210,150,.16), transparent 42%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 2;
+}
+.card:hover::before{ opacity: 1; }
+.card:hover{
+  border-color: var(--glass-line-strong);
+  box-shadow: var(--glass-shadow-hover);
+}
+.card .specular{
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,.18) 0%,
+    rgba(255,255,255,0) 30%,
+    rgba(255,255,255,0) 70%,
+    rgba(255,255,255,.08) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.card .specular::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,.35), transparent 30%, transparent 70%, rgba(255,255,255,.15));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.feature{
+  padding: 26px;
+  min-height: 240px;
+  display: flex; flex-direction: column;
+}
+.feature-top{
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 28px;
+}
+.feature-icon{
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255,219,162,.34), rgba(143,90,36,.28));
+  border: 1px solid rgba(203,156,98,.6);
+  color: var(--accent-2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
+}
+.feature-icon svg{ width: 22px; height: 22px; stroke-width: 1.8; }
+.feature-index{
+  font-size: 11px; letter-spacing: .14em; font-weight: 800;
+  color: var(--muted); text-transform: uppercase;
+}
+.feature h3{
+  font-size: 19px; letter-spacing: -.015em; font-weight: 800;
+  margin-bottom: 8px;
+}
+.feature p{
+  font-size: 14.5px; line-height: 1.6; color: var(--muted);
+  margin: 0; flex: 1;
+}
+.disclaimer{
+  margin-top: 24px; font-size: 13px; color: var(--muted);
+  max-width: 800px; line-height: 1.55;
+}
+
+/* ============================================================
+   MODULE TICKER
+   ============================================================ */
+.module-section{ overflow: hidden; }
+.module-shell{
+  margin-top: 42px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.module-rows{
+  display: grid;
+  gap: 12px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+.module-track{
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+.module-track.reverse{ animation-direction: reverse; animation-duration: 48s; }
+.module-track.slow{ animation-duration: 54s; }
+.module-track.fast{ animation-duration: 38s; }
+.module-group{ display: flex; gap: 10px; flex: none; }
+.module-pill{
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text);
+  font-size: 13.5px; font-weight: 700;
+  white-space: nowrap; cursor: pointer; user-select: none;
+  transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.module-pill svg{ width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; fill: none; opacity: .75; }
+.module-pill:hover{ transform: translateY(-1px); border-color: var(--accent); }
+.module-pill:active{ transform: scale(.97); }
+.module-pill.lit{
+  background: linear-gradient(145deg, rgba(125,120,113,.88), rgba(60,58,55,.88));
+  border-color: rgba(255,240,221,.55);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(239,173,81,.3), inset 0 1px rgba(255,255,255,.24);
+}
+.module-pill.lit svg{ opacity: 1; }
+[data-theme="light"] .module-pill.lit{
+  background: linear-gradient(145deg, rgba(90,70,40,.92), rgba(50,38,22,.9));
+  border-color: rgba(180,130,60,.55);
+}
+@keyframes marquee{ to{ transform: translateX(calc(-50% - 5px)); } }
+@media (hover:hover) and (pointer:fine){ .module-track:hover{ animation-play-state: paused; } }
+
+.module-note{
+  margin: 24px auto 0; max-width: 640px;
+  text-align: center; color: var(--muted);
+  font-size: 13px; line-height: 1.55;
+}
+
+/* ============================================================
+   STEPS
+   ============================================================ */
+.steps{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.step{
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: var(--glass-shadow);
+  position: relative; overflow: hidden;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  will-change: transform;
+}
+.step::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 28px;
+  width: 36px; height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: var(--accent);
+  opacity: .85;
+  box-shadow: 0 0 12px rgba(239,173,81,.6);
+}
+.step:hover{
+  transform: translateY(-4px);
+  border-color: var(--glass-line-strong);
+  box-shadow: var(--glass-shadow-hover);
+}
+.step-number{
+  font-size: 11px; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent-2);
+}
+.step h3{
+  font-size: 18px; font-weight: 800; margin: 16px 0 8px; letter-spacing: -.015em;
+}
+.step p{
+  color: var(--muted); font-size: 14.5px; line-height: 1.55; margin: 0;
+}
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.price-card{
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: var(--glass-shadow);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  will-change: transform;
+}
+.price-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow-hover);
+}
+.price-card.highlight{
+  border-color: var(--glass-line-strong);
+  background: linear-gradient(150deg, rgba(90,68,44,.78), rgba(26,23,20,.65) 55%, rgba(64,50,36,.7));
+}
+[data-theme="light"] .price-card.highlight{
+  background: linear-gradient(150deg, rgba(255,240,216,.88), rgba(255,250,242,.78) 55%, rgba(244,228,204,.82));
+}
+.price-card.highlight::before{
+  content: "";
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239,173,81,.3), transparent 70%);
+  pointer-events: none;
+}
+.price-card.highlight::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,230,190,.14) 50%, transparent 65%);
+  background-size: 250% 100%;
+  animation: sheenSweep 8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes sheenSweep{
+  0%,100%{ background-position: 0% 0; }
+  50%{ background-position: 100% 0; }
+}
+.price-head{
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 14px; margin-bottom: 20px;
+}
+.price-card h3{
+  font-size: 20px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px;
+}
+.price-card .sub{
+  font-size: 14px; color: var(--muted); margin: 0;
+}
+.tag{
+  display: inline-flex; align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(239,173,81,.45);
+  color: var(--accent-2);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(239,173,81,.2);
+}
+.price-in-bot{
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 900; letter-spacing: -.03em;
+  margin-bottom: 26px; color: var(--text);
+}
+.price-list{
+  list-style: none; padding: 0; margin: 0 0 28px;
+  display: grid; gap: 11px;
+  color: var(--text); font-size: 14.5px; line-height: 1.5;
+}
+.price-list li{ display: flex; align-items: flex-start; gap: 10px; }
+.price-list li::before{
+  content: "✓";
+  color: var(--accent-2);
+  font-weight: 900; margin-top: 1px; flex: none;
+}
+.price-card .btn{ margin-top: auto; width: 100%; }
+.price-note{
+  margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.55;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 22px;
+}
+.faq-item{
+  border-radius: 14px;
+  border: 1px solid var(--glass-line);
+  background: var(--glass-fill);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  overflow: hidden;
+  transition: border-color .2s, background .2s;
+}
+.faq-item[open]{ border-color: var(--glass-line-strong); }
+.faq-item summary{
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; padding: 18px 20px;
+  font-weight: 800; font-size: 15px; color: var(--text);
+}
+.faq-item summary::-webkit-details-marker{ display: none; }
+.faq-item summary::after{
+  content: "+";
+  color: var(--accent-2); font-size: 22px; font-weight: 400;
+  line-height: 1; transition: transform .2s; flex: none;
+}
+.faq-item[open] summary::after{ content: "−"; }
+.faq-item p{
+  padding: 0 20px 20px; margin: 0;
+  font-size: 14px; line-height: 1.6; color: var(--muted);
+  max-width: 60ch;
+}
+.faq-bot-link{
+  color: var(--accent-2); text-decoration: underline;
+  text-underline-offset: 3px; font-weight: 700;
+}
+
+/* ============================================================
+   DOWNLOAD
+   ============================================================ */
+.download-box{
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; padding: 44px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-line-strong);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(239,173,81,.20), transparent 50%),
+    var(--glass-fill-strong);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: var(--glass-shadow-hover);
+  position: relative; overflow: hidden;
+}
+.download-box::after{
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,230,190,.1) 50%, transparent 60%);
+  background-size: 250% 100%;
+  animation: sheenSweep 10s ease-in-out infinite;
+  pointer-events: none;
+}
+.download-box h2{
+  font-size: clamp(28px, 3.2vw, 40px); font-weight: 900;
+  line-height: 1.1; margin: 12px 0; letter-spacing: -.04em;
+}
+.download-box p{
+  max-width: 560px; color: var(--muted);
+  font-size: 15px; line-height: 1.6; margin: 0;
+}
+.download-actions{
+  display: flex; flex-direction: column; gap: 10px;
+  min-width: 220px; flex: none; position: relative; z-index: 1;
+}
+.download-actions small{
+  text-align: center; color: var(--muted); font-size: 12px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--line);
+  padding: 48px 0 40px;
+  margin-top: 40px;
+}
+.footer-row{
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 40px;
+}
+.footer .brand{
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 18px; font-weight: 900; letter-spacing: -.03em;
+}
+.footer-logo-mark{
+  width: 26px; height: 26px;
+  filter: drop-shadow(0 0 10px rgba(239,173,81,.4));
+}
+.footer p{
+  color: var(--muted); font-size: 13px; margin-top: 10px;
+  max-width: 420px; line-height: 1.55;
+}
+.footer-links{
+  display: flex; flex-wrap: wrap; gap: 22px;
+  color: var(--muted); font-size: 14px;
+}
+.footer-links a{ transition: color .2s; }
+.footer-links a:hover{ color: var(--accent-2); }
+.footer-bottom{
+  margin-top: 32px; padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 12px; line-height: 1.6;
+}
+.beta-notice{
+  margin-top: 12px; color: var(--muted); font-size: 12px; font-style: italic;
+}
+
+/* ============================================================
+   DIALOG + BACK TOP
+   ============================================================ */
+.back-top{
+  position: fixed; right: 16px; bottom: 16px;
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--glass-fill-strong);
+  border: 1px solid var(--glass-line);
+  color: var(--text);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--glass-shadow);
+  font-size: 18px; z-index: 30;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, opacity .25s, visibility .25s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.back-top:hover{ transform: translateY(-2px); border-color: var(--accent); }
+.back-top:active{ transform: scale(.94); }
+@supports (padding: env(safe-area-inset-bottom)) {
+  .back-top{ bottom: calc(16px + env(safe-area-inset-bottom)); right: calc(16px + env(safe-area-inset-right)); }
+}
+
+.support-dialog{
+  max-width: 420px; padding: 26px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-line-strong);
+  background: var(--glass-fill-strong);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  color: var(--text);
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+}
+.support-dialog::backdrop{
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.support-dialog h2{ font-size: 20px; margin-bottom: 12px; font-weight: 800; }
+.support-dialog p{ color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
+.support-actions{
+  display: flex; justify-content: flex-end;
+  gap: 10px; flex-wrap: wrap; margin-top: 24px;
+}
+.support-actions .btn{ min-height: 44px; }
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal{
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.in{ opacity: 1; transform: none; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal{ opacity: 1; transform: none; }
+  .intro-logo, .hero-emblem{ animation: none; }
+  .intro-glow{ animation: none; }
+  .module-track{ animation: none; }
+  .visual-ring::after{ animation: none; }
+}
+
+@media (max-width: 900px){
+  .nav-links{ display: none; }
+  .nav{ grid-template-columns: auto 1fr; }
+  .nav-mobile-name{ display: none; }
+  .nav-actions{ justify-self: end; }
+  .menu-toggle{ display: inline-grid; }
+  .hero-grid{ grid-template-columns: 1fr; min-height: 0; gap: 20px; }
+  .hero-visual{ min-height: 320px; order: -1; }
+  .hero-emblem{ width: min(60%, 260px); }
+  .feature-grid, .steps, .pricing-grid, .faq-grid{ grid-template-columns: 1fr; }
+  .section-heading{ flex-direction: column; align-items: flex-start; }
+  .download-box{ flex-direction: column; align-items: stretch; padding: 30px; }
+  .download-actions{ min-width: 0; }
+  .footer-row{ flex-direction: column; gap: 24px; }
+}
+
+@media (max-width: 600px){
+  .wrap{ width: calc(100% - 28px); }
+  .section{ padding: 56px 0; }
+  .hero{ padding: 48px 0 64px; }
+  .hero h1{ font-size: clamp(38px, 10vw, 56px); }
+  .hero-copy > p{ font-size: 16.5px; }
+  .feature, .step, .price-card{ padding: 20px; }
+  .full{ grid-column: auto; }
+  .nav-actions .btn-ghost{ display: none; }
+  .intro-logo{ width: min(85vw, 70svh, 420px); }
+  .download-box{ padding: 24px; gap: 24px; }
+  .download-box h2{ font-size: 26px; }
+  .hero-actions{ gap: 10px; }
+  .hero-actions .btn{ width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-transparency: reduce){
+  .card, .step, .faq-item, .download-box, .price-card, .nav, .mobile-menu, .back-top{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--surface);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="bg3d" aria-hidden="true"></div>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav" aria-label="Основная навигация">
+    <a class="nav-logo" href="#top" aria-label="Jesider — на главную">
+      <img class="nav-logo-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgNyA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InVwcGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIwLjkiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiNmOWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNWRlZWQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsZWZ0IiB4MT0iMCIgeTE9IjAiIHgyPSIuNyIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmNGY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjM2NmZTMiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaWdodCIgeDE9IjAuMiIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ii40OCIgc3RvcC1jb2xvcj0iI2VmZjRmYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I2YzZkZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIHN0cm9rZT0iIzlmYWVjNSIgc3Ryb2tlLXdpZHRoPSIuMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik05LjQgMzAuNSAzMSAxNS45IDMxIDIyLjcgMjIuMSAzMC41WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik0zMyAxNS45IDQ0LjIgMjMuMyAzMyAzMC40WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCNsZWZ0KSIgZD0iTTkuNSAzMi4zIDI4LjkgMzIuMyAyMC4xIDM5LjJaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3VwcGVyKSIgZD0iTTIxLjIgNDAuNCAzMSAzMy42IDMxIDQ4LjFaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3JpZ2h0KSIgZD0iTTMzIDMyLjMgNDMuMiAzMi4zIDMzIDQwLjUgMzMgNDguMSA1NC45IDMyLjIgNDQuMiAyNC45IDMzIDMxLjFaIi8+CiAgPC9nPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii43IiBzdHJva2Utd2lkdGg9Ii4yNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEwLjYgMzAgMzAuNiAxNi41IE0zMy41IDE2LjYgNDMuNCAyMy4zIE0xMC43IDMyLjcgMjcuOSAzMi43IE0yMS45IDQwLjQgMzAuNiAzNC40IE0zNCAzMSA0NC4yIDI1LjYgNTQgMzIuMiIvPjwvZz4KPC9zdmc+Cg==" alt="" aria-hidden="true">
+      <span>Jesider</span>
+    </a>
+
+    <span class="nav-mobile-name" aria-hidden="true">Jesider</span>
+
+    <div class="nav-links">
+      <a href="#features">Возможности</a>
+      <a href="#modules">Модули</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://t.me/lovechasing" target="_blank" rel="noopener noreferrer">Поддержка</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Сменить тему" title="Сменить тему">
+        <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M19.07 4.93l-1.42 1.42M6.35 17.65l-1.42 1.42"/></svg>
+        <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.1A8.7 8.7 0 0 1 8.9 3.6a8.8 8.8 0 1 0 11.5 11.5Z"/></svg>
+      </button>
+      <a class="btn btn-ghost" href="https://t.me/sellsere_bot" target="_blank" rel="noopener noreferrer" title="Войти">Войти</a>
+      <a class="btn btn-primary" href="https://t.me/sellsere_bot" target="_blank" rel="noopener noreferrer">Купить</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-scroll-bar" aria-hidden="true"><span id="navScrollFill"></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#features">Возможности</a>
+    <a href="#modules">Модули</a>
+    <a href="#how">Как начать</a>
+    <a href="#pricing">Тарифы</a>
+    <a href="#faq">Вопросы и ответы</a>
+    <a href="https://t.me/lovechasing" target="_blank" rel="noopener noreferrer">Поддержка в Telegram ↗</a>
+    <a href="https://t.me/sellsere_bot" target="_blank" rel="noopener noreferrer">Войти ↗</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="logo-intro" id="top" aria-label="Jesider">
+    <div class="intro-glow" aria-hidden="true"></div>
+    <img class="intro-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgNyA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InVwcGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIwLjkiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiNmOWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNWRlZWQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsZWZ0IiB4MT0iMCIgeTE9IjAiIHgyPSIuNyIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmNGY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjM2NmZTMiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaWdodCIgeDE9IjAuMiIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ii40OCIgc3RvcC1jb2xvcj0iI2VmZjRmYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I2YzZkZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIHN0cm9rZT0iIzlmYWVjNSIgc3Ryb2tlLXdpZHRoPSIuMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik05LjQgMzAuNSAzMSAxNS45IDMxIDIyLjcgMjIuMSAzMC41WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik0zMyAxNS45IDQ0LjIgMjMuMyAzMyAzMC40WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCNsZWZ0KSIgZD0iTTkuNSAzMi4zIDI4LjkgMzIuMyAyMC4xIDM5LjJaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3VwcGVyKSIgZD0iTTIxLjIgNDAuNCAzMSAzMy42IDMxIDQ4LjFaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3JpZ2h0KSIgZD0iTTMzIDMyLjMgNDMuMiAzMi4zIDMzIDQwLjUgMzMgNDguMSA1NC45IDMyLjIgNDQuMiAyNC45IDMzIDMxLjFaIi8+CiAgPC9nPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii43IiBzdHJva2Utd2lkdGg9Ii4yNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEwLjYgMzAgMzAuNiAxNi41IE0zMy41IDE2LjYgNDMuNCAyMy4zIE0xMC43IDMyLjcgMjcuOSAzMi43IE0yMS45IDQwLjQgMzAuNiAzNC40IE0zNCAzMSA0NC4yIDI1LjYgNTQgMzIuMiIvPjwvZz4KPC9zdmc+Cg==" alt="Логотип Jesider">
+    <a class="scroll-cue" href="#hero">
+      <span>Прокрутите вниз</span>
+      <span class="scroll-cue-arrow" aria-hidden="true">↓</span>
+    </a>
+  </section>
+
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> Клиент Minecraft · бета</div>
+        <h1>Играй по<br><span>своим правилам.</span></h1>
+        <p>Jesider объединяет боевые и визуальные функции в одном клиенте. Выбирай настройки под свой стиль игры.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">Выбрать доступ <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#features">Узнать больше <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note"><span class="dot"></span> Тарифы и оплата — в Telegram-боте</div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-ring"></div>
+        <img class="hero-emblem" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgNyA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InVwcGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIwLjkiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiNmOWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNWRlZWQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsZWZ0IiB4MT0iMCIgeTE9IjAiIHgyPSIuNyIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmNGY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjM2NmZTMiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaWdodCIgeDE9IjAuMiIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ii40OCIgc3RvcC1jb2xvcj0iI2VmZjRmYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I2YzZkZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIHN0cm9rZT0iIzlmYWVjNSIgc3Ryb2tlLXdpZHRoPSIuMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik05LjQgMzAuNSAzMSAxNS45IDMxIDIyLjcgMjIuMSAzMC41WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik0zMyAxNS45IDQ0LjIgMjMuMyAzMyAzMC40WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCNsZWZ0KSIgZD0iTTkuNSAzMi4zIDI4LjkgMzIuMyAyMC4xIDM5LjJaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3VwcGVyKSIgZD0iTTIxLjIgNDAuNCAzMSAzMy42IDMxIDQ4LjFaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3JpZ2h0KSIgZD0iTTMzIDMyLjMgNDMuMiAzMi4zIDMzIDQwLjUgMzMgNDguMSA1NC45IDMyLjIgNDQuMiAyNC45IDMzIDMxLjFaIi8+CiAgPC9nPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii43IiBzdHJva2Utd2lkdGg9Ii4yNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEwLjYgMzAgMzAuNiAxNi41IE0zMy41IDE2LjYgNDMuNCAyMy4zIE0xMC43IDMyLjcgMjcuOSAzMi43IE0yMS45IDQwLjQgMzAuNiAzNC40IE0zNCAzMSA0NC4yIDI1LjYgNTQgMzIuMiIvPjwvZz4KPC9zdmc+Cg==" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></span> Возможности</div>
+          <h2>Твой стиль.<br>Твои настройки.</h2>
+        </div>
+        <p>Всё самое важное — в одном клиенте. Настраивай инструменты под свои задачи.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="card feature reveal">
+          <div class="specular"></div>
+          <div class="feature-top">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/></svg></span>
+            <span class="feature-index">01 · Combat</span>
+          </div>
+          <h3>Боевые модули</h3>
+          <p>KillAura и другие боевые функции с гибкими настройками дистанции и поведения.</p>
+        </article>
+
+        <article class="card feature reveal">
+          <div class="specular"></div>
+          <div class="feature-top">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/></svg></span>
+            <span class="feature-index">02 · Visuals</span>
+          </div>
+          <h3>Визуальные функции</h3>
+          <p>ESP и подсветка игровых объектов помогают видеть больше и адаптировать интерфейс под себя.</p>
+        </article>
+
+        <article class="card feature reveal">
+          <div class="specular"></div>
+          <div class="feature-top">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg></span>
+            <span class="feature-index">03 · Settings</span>
+          </div>
+          <h3>Гибкие настройки</h3>
+          <p>Управляй модулями и выбирай конфигурацию, которая подходит твоему стилю игры.</p>
+        </article>
+      </div>
+
+      <p class="disclaimer reveal">Функции зависят от версии клиента и сервера. Использование модов может нарушать правила серверов.</p>
+    </div>
+  </section>
+
+  <section class="section module-section" id="modules">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></svg></span> Модули в деталях</div>
+          <h2>Модули под твой стиль.</h2>
+        </div>
+        <p>Боевые, визуальные и другие инструменты — в одной ленте.</p>
+      </div>
+    </div>
+
+    <div class="module-shell" aria-label="Примеры названий модулей">
+      <div class="module-rows">
+        <div class="module-track">
+          <div class="module-group">
+            <button class="module-pill" type="button" data-module="AimAssist"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10M13 3 3 13M2 7l3-3M11 4l3 3M2 12l2 2M12 14l2-2"/></svg>AimAssist</button>
+            <button class="module-pill lit" type="button" data-module="AntiBot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10M13 3 3 13"/></svg>AntiBot</button>
+            <button class="module-pill lit" type="button" data-module="Criticals"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10M13 3 3 13"/></svg>Criticals</button>
+            <button class="module-pill lit" type="button" data-module="AutoPotion"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10"/></svg>AutoPotion</button>
+            <button class="module-pill" type="button" data-module="AutoSwap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10"/></svg>AutoSwap</button>
+            <button class="module-pill" type="button" data-module="AutoTrap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10"/></svg>AutoTrap</button>
+            <button class="module-pill" type="button" data-module="Combat"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10"/></svg>Combat</button>
+          </div>
+        </div>
+        <div class="module-track reverse">
+          <div class="module-group">
+            <button class="module-pill" type="button" data-module="WaterRise"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7-1 6-3 10-9 9"/></svg>WaterRise</button>
+            <button class="module-pill" type="button" data-module="GrimGlide"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>GrimGlide</button>
+            <button class="module-pill" type="button" data-module="Speed"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>Speed</button>
+            <button class="module-pill lit" type="button" data-module="AutoSprint"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>AutoSprint</button>
+            <button class="module-pill lit" type="button" data-module="Velocity"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>Velocity</button>
+            <button class="module-pill" type="button" data-module="NoSlow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>NoSlow</button>
+            <button class="module-pill" type="button" data-module="Movement"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10c5 1 7-2 10-7"/></svg>Movement</button>
+          </div>
+        </div>
+        <div class="module-track slow">
+          <div class="module-group">
+            <button class="module-pill" type="button" data-module="Crosshair"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4-3 4-7 4-7-4-7-4Z"/><circle cx="8" cy="8" r="2"/></svg>Crosshair</button>
+            <button class="module-pill" type="button" data-module="Hands"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4-3 4-7 4-7-4-7-4Z"/></svg>Hands</button>
+            <button class="module-pill lit" type="button" data-module="JumpCircle"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4"/></svg>JumpCircle</button>
+            <button class="module-pill lit" type="button" data-module="NoRender"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4"/></svg>NoRender</button>
+            <button class="module-pill" type="button" data-module="Particles"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4"/></svg>Particles</button>
+            <button class="module-pill" type="button" data-module="Predictions"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4"/></svg>Predictions</button>
+            <button class="module-pill" type="button" data-module="Visuals"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s3-4 7-4 7 4 7 4"/></svg>Visuals</button>
+          </div>
+        </div>
+        <div class="module-track reverse fast">
+          <div class="module-group">
+            <button class="module-pill" type="button" data-module="TpKeyFinder"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="4" r="1.5"/><circle cx="12" cy="4" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>TpKeyFinder</button>
+            <button class="module-pill" type="button" data-module="TpLoot"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="4" r="1.5"/><circle cx="12" cy="4" r="1.5"/></svg>TpLoot</button>
+            <button class="module-pill" type="button" data-module="WarpFarm"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="4" r="1.5"/></svg>WarpFarm</button>
+            <button class="module-pill lit" type="button" data-module="AutoTool"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2"/></svg>AutoTool</button>
+            <button class="module-pill lit" type="button" data-module="AutoRespawn"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2"/></svg>AutoRespawn</button>
+            <button class="module-pill" type="button" data-module="Inventory"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2"/></svg>Inventory</button>
+            <button class="module-pill" type="button" data-module="Utilities"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2"/></svg>Utilities</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="module-note reveal">Нажми на модуль — плашка подсветится. Это демо на сайте, на игру не влияет.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span> Начало работы</div>
+          <h2>Три простых шага.</h2>
+        </div>
+        <p>Если нужна помощь с установкой или доступом, напиши команде в Telegram.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step-number">01 / Выбор</span>
+          <h3>Подбери тариф</h3>
+          <p>Выбери месячный или бессрочный доступ в Telegram-боте.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-number">02 / Оплата</span>
+          <h3>Оплати в Telegram</h3>
+          <p>Выбери тариф и оплати его звёздами Telegram.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-number">03 / Запуск</span>
+          <h3>Получи клиент</h3>
+          <p>После покупки бот сам вышлет тебе лоадер.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg></span> Тарифы</div>
+          <h2>Выбери свой доступ.</h2>
+        </div>
+        <p>Начни с месяца или выбери бессрочный вариант. Без сложных сравнений.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal">
+          <div class="price-head">
+            <div>
+              <h3>Месячный</h3>
+              <p class="sub">Для знакомства с клиентом</p>
+            </div>
+          </div>
+          <div class="price-in-bot">Цена в боте</div>
+          <ul class="price-list">
+            <li>Доступ к модулям и функциям</li>
+            <li>Обновления в течение подписки</li>
+            <li>Базовая поддержка</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://t.me/sellsere_bot" rel="noopener noreferrer" target="_blank">Купить месячный доступ ↗</a>
+        </article>
+
+        <article class="price-card highlight reveal">
+          <div class="price-head">
+            <div>
+              <h3>Навсегда</h3>
+              <p class="sub">Для долгой игры</p>
+            </div>
+            <span class="tag">Выгодно</span>
+          </div>
+          <div class="price-in-bot">Цена в боте</div>
+          <ul class="price-list">
+            <li>Бессрочный доступ к функциям</li>
+            <li>Доступ к будущим обновлениям</li>
+            <li>Приоритетный доступ к билдам</li>
+          </ul>
+          <a class="btn btn-primary" href="https://t.me/sellsere_bot" rel="noopener noreferrer" target="_blank">Купить бессрочный доступ ↗</a>
+        </article>
+      </div>
+
+      <p class="price-note reveal">Цена и условия указаны в Telegram-боте. Оплата — звёздами Telegram.</p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span> Вопросы и ответы</div>
+          <h2>Всё по делу.</h2>
+        </div>
+        <p>Ответы на частые вопросы перед началом работы.</p>
+      </div>
+
+      <div class="faq-grid">
+        <details class="faq-item reveal">
+          <summary>Как купить доступ?</summary>
+          <p>Мы ещё маленькая команда, поэтому пока принимаем оплату только звёздами Telegram. Перейдите в бот, выберите тариф и оплатите. <a class="faq-bot-link" href="https://t.me/sellsere_bot" target="_blank" rel="noopener noreferrer">Перейти в бот ↗</a></p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Как скачать клиент?</summary>
+          <p>После покупки бот сам вышлет вам лоадер.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Какие версии Minecraft поддерживаются?</summary>
+          <p>Поддерживается версия 1.21.11. Версии в разработке: 26.2 и 26.3.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Можно ли использовать клиент на любом сервере?</summary>
+          <p>Правила серверов отличаются. Использование клиента может привести к блокировке — ознакомься с правилами выбранного сервера.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Где получить помощь?</summary>
+          <p>Напиши в Telegram по ссылке внизу страницы, описав вопрос и версию игры.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="download-box reveal">
+        <div>
+          <div class="eyebrow"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg></span> Следующий шаг</div>
+          <h2>Готов начать?</h2>
+          <p>Выбери тариф в Telegram-боте. После покупки бот сам вышлет тебе лоадер.</p>
+        </div>
+        <div class="download-actions">
+          <a class="btn btn-primary" href="https://t.me/sellsere_bot" target="_blank" rel="noopener noreferrer">Открыть бота ↗</a>
+          <small>Оплата — звёздами Telegram</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a class="brand" href="#top">
+          <img class="footer-logo-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjcgNyA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InVwcGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIwLjkiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiNmOWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkNWRlZWQiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsZWZ0IiB4MT0iMCIgeTE9IjAiIHgyPSIuNyIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmNGY3ZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjM2NmZTMiLz48L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJyaWdodCIgeDE9IjAuMiIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ii40OCIgc3RvcC1jb2xvcj0iI2VmZjRmYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2I2YzZkZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIHN0cm9rZT0iIzlmYWVjNSIgc3Ryb2tlLXdpZHRoPSIuMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik05LjQgMzAuNSAzMSAxNS45IDMxIDIyLjcgMjIuMSAzMC41WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCN1cHBlcikiIGQ9Ik0zMyAxNS45IDQ0LjIgMjMuMyAzMyAzMC40WiIvPgogICAgPHBhdGggZmlsbD0idXJsKCNsZWZ0KSIgZD0iTTkuNSAzMi4zIDI4LjkgMzIuMyAyMC4xIDM5LjJaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3VwcGVyKSIgZD0iTTIxLjIgNDAuNCAzMSAzMy42IDMxIDQ4LjFaIi8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI3JpZ2h0KSIgZD0iTTMzIDMyLjMgNDMuMiAzMi4zIDMzIDQwLjUgMzMgNDguMSA1NC45IDMyLjIgNDQuMiAyNC45IDMzIDMxLjFaIi8+CiAgPC9nPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii43IiBzdHJva2Utd2lkdGg9Ii4yNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEwLjYgMzAgMzAuNiAxNi41IE0zMy41IDE2LjYgNDMuNCAyMy4zIE0xMC43IDMyLjcgMjcuOSAzMi43IE0yMS45IDQwLjQgMzAuNiAzNC40IE0zNCAzMSA0NC4yIDI1LjYgNTQgMzIuMiIvPjwvZz4KPC9zdmc+Cg==" alt="" aria-hidden="true">
+          <span>Jesider</span>
+        </a>
+        <p>Клиент для Minecraft. Настраивай игру под себя.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Возможности</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://t.me/lovechasing" rel="noopener noreferrer" target="_blank">Telegram ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Jesider. Minecraft — торговая марка Mojang. Jesider не представлен как официальный продукт Minecraft.
+    </div>
+    <p class="beta-notice">Бета-тест. Покупка и поддержка — в Telegram.</p>
+  </div>
+</footer>
+
+<dialog class="support-dialog" id="supportDialog" aria-labelledby="supportTitle" aria-describedby="supportDescription">
+  <h2 id="supportTitle">Перейти в поддержку?</h2>
+  <p id="supportDescription">Вы перейдёте в Telegram: t.me/lovechasing. Ответ может занимать до 2 дней.</p>
+  <div class="support-actions">
+    <button class="btn btn-ghost" id="supportCancel" type="button">Отмена</button>
+    <a class="btn btn-primary" id="supportProceed" href="https://t.me/lovechasing" target="_blank" rel="noopener noreferrer">Перейти в Telegram ↗</a>
+  </div>
+</dialog>
+
+<button class="back-top" id="backTop" aria-label="Наверх" title="Наверх" hidden>↑</button>
+
+<script>
+(function() {
+  'use strict';
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('.theme-toggle');
+  function refreshThemeControls() {
+    const light = root.dataset.theme === 'light';
+    const label = light ? 'Включить тёмную тему' : 'Включить светлую тему';
+    buttons.forEach(button => {
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    });
+    document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+      meta.setAttribute('content', light ? '#f7f2e9' : '#0b0a09');
+    });
+  }
+  let waveFrame = 0;
+  let waveCanvas = null;
+  function drawThemeWave(button, light) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    cancelAnimationFrame(waveFrame);
+    if (waveCanvas) waveCanvas.remove();
+    const canvas = document.createElement('canvas');
+    waveCanvas = canvas;
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    if (!ctx) { canvas.remove(); waveCanvas = null; return; }
+    const w = window.innerWidth, h = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    ctx.scale(dpr, dpr);
+    const rect = button.getBoundingClientRect();
+    const originX = rect.left + rect.width / 2, originY = rect.top + rect.height / 2;
+    const maxDistance = Math.max(
+      Math.hypot(originX, originY), Math.hypot(w - originX, originY),
+      Math.hypot(originX, h - originY), Math.hypot(w - originX, h - originY)
+    );
+    const size = Math.max(40, Math.ceil(Math.max(w, h) / 24));
+    const tiles = [];
+    for (let y = 0; y < h; y += size) {
+      for (let x = 0; x < w; x += size) {
+        const distance = Math.hypot(x + size / 2 - originX, y + size / 2 - originY);
+        tiles.push({ x, y, delay: (distance / maxDistance) * 550 });
+      }
+    }
+    const rgb = light ? '164,100,39' : '255,190,98';
+    const started = performance.now();
+    function frame(now) {
+      const elapsed = now - started;
+      ctx.clearRect(0, 0, w, h);
+      for (const tile of tiles) {
+        const progress = (elapsed - tile.delay) / 380;
+        if (progress <= 0 || progress >= 1) continue;
+        // Flat tiles rise slightly and settle as the wave passes.
+        const lift = Math.sin(progress * Math.PI);
+        const tileSize = (size - 4) * (0.88 + 0.12 * lift);
+        const x = tile.x + (size - tileSize) / 2;
+        const y = tile.y + (size - tileSize) / 2 - lift * 5;
+        // The 2D edges gently flex as the ripple passes through each tile.
+        const bend = Math.sin(progress * Math.PI * 2) * lift * tileSize * 0.12;
+        function tilePath(px, py) {
+          ctx.beginPath();
+          ctx.moveTo(px, py);
+          ctx.quadraticCurveTo(px + tileSize / 2, py + bend, px + tileSize, py);
+          ctx.quadraticCurveTo(px + tileSize + bend * 0.6, py + tileSize / 2, px + tileSize, py + tileSize);
+          ctx.quadraticCurveTo(px + tileSize / 2, py + tileSize + bend, px, py + tileSize);
+          ctx.quadraticCurveTo(px + bend * 0.6, py + tileSize / 2, px, py);
+          ctx.closePath();
+        }
+        // Offset shadow suggests lift without adding 3D geometry.
+        tilePath(x, y + lift * 4 + 1);
+        ctx.fillStyle = `rgba(30,20,12,${lift * (light ? 0.12 : 0.22)})`;
+        ctx.fill();
+        tilePath(x, y);
+        ctx.fillStyle = `rgba(${rgb},${lift * (light ? 0.25 : 0.35)})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(${light ? '255,255,255' : '255,223,170'},${lift * 0.24})`;
+        ctx.lineWidth = 0.75;
+        ctx.stroke();
+      }
+      if (elapsed < 930) waveFrame = requestAnimationFrame(frame);
+      else { canvas.remove(); if (waveCanvas === canvas) waveCanvas = null; }
+    }
+    waveFrame = requestAnimationFrame(frame);
+  }
+  function toggleTheme(button) {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = next;
+    try { localStorage.setItem('jesider-theme-v2', next); } catch (e) {}
+    refreshThemeControls();
+    drawThemeWave(button, next === 'light');
+  }
+  buttons.forEach(button => {
+    let touchStart = null;
+    let lastTouch = 0;
+    button.addEventListener('touchstart', event => {
+      if (event.touches.length === 1) {
+        const touch = event.touches[0];
+        touchStart = { x: touch.clientX, y: touch.clientY };
+      } else touchStart = null;
+    }, { passive: true });
+    button.addEventListener('touchend', event => {
+      const touch = event.changedTouches[0];
+      if (!touchStart || !touch || Math.hypot(touch.clientX - touchStart.x, touch.clientY - touchStart.y) > 10) {
+        touchStart = null;
+        return;
+      }
+      touchStart = null;
+      event.preventDefault();
+      lastTouch = Date.now();
+      toggleTheme(button);
+    }, { passive: false });
+    button.addEventListener('touchcancel', () => { touchStart = null; });
+    button.addEventListener('click', event => {
+      if (event.detail !== 0 && Date.now() - lastTouch < 800) return;
+      toggleTheme(button);
+    });
+  });
+  refreshThemeControls();
+})();
+</script>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+const mount = document.getElementById('bg3d');
+if (mount && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+  // ---------- SCENE ----------
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x0b0a09, 0.045);
+
+  const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 100);
+  camera.position.set(0, 0.6, 7.5);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.setClearColor(0x000000, 0);
+  mount.appendChild(renderer.domElement);
+
+  // ---------- SHADER PLANE (flowing amber field) ----------
+  const vertSrc = `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+  const fragSrc = `
+    precision highp float;
+    uniform float uTime;
+    uniform vec3 uColorA;
+    uniform vec3 uColorB;
+    varying vec2 vUv;
+
+    float hash(vec2 p) {
+      p = fract(p * vec2(123.34, 456.21));
+      p += dot(p, p + 45.32);
+      return fract(p.x * p.y);
+    }
+    float noise(vec2 p) {
+      vec2 i = floor(p), f = fract(p);
+      f = f * f * (3.0 - 2.0 * f);
+      float a = hash(i);
+      float b = hash(i + vec2(1.0, 0.0));
+      float c = hash(i + vec2(0.0, 1.0));
+      float d = hash(i + vec2(1.0, 1.0));
+      return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+    }
+    float fbm(vec2 p) {
+      float v = 0.0, a = 0.5;
+      for (int i = 0; i < 5; i++) {
+        v += a * noise(p);
+        p *= 2.03;
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    void main() {
+      vec2 uv = vUv - 0.5;
+      vec2 p = uv * 3.2;
+      float t = uTime * 0.12;
+
+      // organic flowing field
+      float n = fbm(p + vec2(t, t * 0.7));
+      n += fbm(p * 1.6 - vec2(t * 0.8, -t)) * 0.7;
+      n = n * 0.5;
+
+      // horizontal ribbons
+      float ribbon = sin((p.y + n * 2.2) * 3.4 + t * 1.8) * 0.5 + 0.5;
+      ribbon = pow(ribbon, 3.5);
+
+      // energy hotspots
+      float glow = smoothstep(0.4, 0.92, n) * 0.7;
+      float hotspot = smoothstep(0.75, 0.98, fbm(p * 2.4 + t * 0.5));
+
+      vec3 col = mix(uColorA, uColorB, n);
+      col = mix(col, vec3(1.0, 0.85, 0.6), hotspot * 0.35);
+
+      // radial vignette
+      float dist = length(uv);
+      float vign = smoothstep(0.85, 0.15, dist);
+
+      float intensity = (ribbon * 0.45 + glow * 0.7 + hotspot * 0.35) * vign * 0.55;
+
+      gl_FragColor = vec4(col * intensity, intensity * 1.2);
+    }
+  `;
+  const uniforms = {
+    uTime: { value: 0 },
+    uColorA: { value: new THREE.Color(0x4a2408) },
+    uColorB: { value: new THREE.Color(0xefad51) },
+  };
+  const planeGeo = new THREE.PlaneGeometry(30, 18, 1, 1);
+  const planeMat = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader: vertSrc,
+    fragmentShader: fragSrc,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+  });
+  const plane = new THREE.Mesh(planeGeo, planeMat);
+  plane.position.z = -6;
+  scene.add(plane);
+
+  // ---------- WIREFRAME TORUS KNOT ----------
+  const knotGeo = new THREE.TorusKnotGeometry(2.1, 0.62, 128, 16, 2, 3);
+  const knotEdges = new THREE.EdgesGeometry(knotGeo, 15);
+  const knotMat = new THREE.LineBasicMaterial({
+    color: 0xefad51,
+    transparent: true,
+    opacity: 0.14,
+    blending: THREE.AdditiveBlending,
+  });
+  const knot = new THREE.LineSegments(knotEdges, knotMat);
+  knot.position.set(-2.6, 0.4, -2.2);
+  knot.scale.setScalar(0.85);
+  scene.add(knot);
+
+  // ---------- INNER ICOSAHEDRON ----------
+  const icoGeo = new THREE.IcosahedronGeometry(1.1, 0);
+  const icoMat = new THREE.MeshBasicMaterial({
+    color: 0xffcd81,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.18,
+    blending: THREE.AdditiveBlending,
+  });
+  const ico = new THREE.Mesh(icoGeo, icoMat);
+  ico.position.set(2.6, -0.6, -1.2);
+  scene.add(ico);
+
+  // ---------- PARTICLES ----------
+  // Fewer particles on mobile / low-end devices for better FPS
+  const isMobile = matchMedia('(max-width: 768px)').matches || matchMedia('(pointer: coarse)').matches;
+  const COUNT = isMobile ? 600 : 1400;
+  const positions = new Float32Array(COUNT * 3);
+  const pColors = new Float32Array(COUNT * 3);
+  const pSizes = new Float32Array(COUNT);
+  const particleKinds = new Uint8Array(COUNT);
+  const darkColors = [0xffcd81, 0xefad51, 0x8aa7d6].map(c => new THREE.Color(c));
+  const lightColors = [0x8a4b13, 0x9b571a, 0x465c7d].map(c => new THREE.Color(c));
+  const weights = [0, 1, 2, 1, 0];
+  for (let i = 0; i < COUNT; i++) {
+    const r = 4 + Math.random() * 14;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    positions[i*3]   = Math.sin(phi) * Math.cos(theta) * r;
+    positions[i*3+1] = Math.sin(phi) * Math.sin(theta) * r * 0.7;
+    positions[i*3+2] = Math.cos(phi) * r - 4;
+    particleKinds[i] = weights[Math.floor(Math.random() * weights.length)];
+    const c = darkColors[particleKinds[i]];
+    pColors[i*3]   = c.r;
+    pColors[i*3+1] = c.g;
+    pColors[i*3+2] = c.b;
+    pSizes[i] = 0.03 + Math.random() * 0.09;
+  }
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  pGeo.setAttribute('color', new THREE.BufferAttribute(pColors, 3));
+
+  // soft round sprite
+  const sc = document.createElement('canvas');
+  sc.width = sc.height = 64;
+  const sctx = sc.getContext('2d');
+  const g = sctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  g.addColorStop(0, 'rgba(255,255,255,1)');
+  g.addColorStop(0.25, 'rgba(255,255,255,0.7)');
+  g.addColorStop(0.6, 'rgba(255,255,255,0.15)');
+  g.addColorStop(1, 'rgba(255,255,255,0)');
+  sctx.fillStyle = g;
+  sctx.fillRect(0, 0, 64, 64);
+  const sprite = new THREE.CanvasTexture(sc);
+  const pMat = new THREE.PointsMaterial({
+    size: 0.12,
+    map: sprite,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.85,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    sizeAttenuation: true,
+  });
+  const points = new THREE.Points(pGeo, pMat);
+  scene.add(points);
+
+  // ---------- INTERACTION ----------
+  let mx = 0, my = 0, targetMx = 0, targetMy = 0;
+  let scrollYVal = 0, targetScroll = 0;
+  addEventListener('pointermove', (e) => {
+    targetMx = (e.clientX / innerWidth) * 2 - 1;
+    targetMy = (e.clientY / innerHeight) * 2 - 1;
+  }, { passive: true });
+  addEventListener('scroll', () => { targetScroll = window.scrollY; }, { passive: true });
+
+  const clock = new THREE.Clock();
+  let t = 0;
+  let rafId = 0;
+  let lastLightTheme = null;
+  function tick() {
+    rafId = requestAnimationFrame(tick);
+    if (document.hidden) return; // pause heavy work when tab is not visible
+
+    const dt = clock.getDelta();
+    t += dt;
+
+    mx += (targetMx - mx) * 0.045;
+    my += (targetMy - my) * 0.045;
+    scrollYVal += (targetScroll - scrollYVal) * 0.06;
+
+    // camera parallax + gentle drift
+    camera.position.x = mx * 0.9 + Math.sin(t * 0.15) * 0.25;
+    camera.position.y = -my * 0.6 + 0.6 + Math.cos(t * 0.12) * 0.15;
+    camera.lookAt(0, 0, 0);
+
+    // plane shader + parallax
+    uniforms.uTime.value = t;
+    plane.position.y = -scrollYVal * 0.0015;
+
+    // knots / icosa
+    knot.rotation.x = t * 0.08;
+    knot.rotation.y = t * 0.11;
+    ico.rotation.x = -t * 0.14;
+    ico.rotation.y = t * 0.16;
+
+    // particles drift
+    const posAttr = pGeo.attributes.position;
+    const posArr = posAttr.array;
+    for (let i = 0; i < COUNT; i++) {
+      posArr[i*3+2] += 0.015 + (i % 5) * 0.002;
+      if (posArr[i*3+2] > 12) posArr[i*3+2] = -22;
+    }
+    posAttr.needsUpdate = true;
+
+    // subtle group rotation on scroll
+    scene.rotation.y = scrollYVal * 0.0002;
+
+    // Only update materials when the theme changes, preserving particle positions.
+    const isLight = document.documentElement.dataset.theme === 'light';
+    if (isLight !== lastLightTheme) {
+      lastLightTheme = isLight;
+      scene.fog.color.setHex(isLight ? 0xf7f2e9 : 0x0b0a09);
+      uniforms.uColorA.value.setHex(isLight ? 0xc27a28 : 0x4a2408);
+      uniforms.uColorB.value.setHex(isLight ? 0xf2b862 : 0xefad51);
+      knotMat.color.setHex(isLight ? 0x754016 : 0xefad51);
+      icoMat.color.setHex(isLight ? 0x70401e : 0xffcd81);
+      knotMat.opacity = isLight ? 0.36 : 0.14;
+      icoMat.opacity = isLight ? 0.4 : 0.18;
+      pMat.opacity = isLight ? 0.75 : 0.85;
+      for (const material of [knotMat, icoMat, pMat]) {
+        // Additive blending only brightens, so use normal blending on the light background.
+        material.blending = isLight ? THREE.NormalBlending : THREE.AdditiveBlending;
+        material.needsUpdate = true;
+      }
+      const palette = isLight ? lightColors : darkColors;
+      for (let i = 0; i < COUNT; i++) {
+        const c = palette[particleKinds[i]];
+        pColors[i * 3] = c.r;
+        pColors[i * 3 + 1] = c.g;
+        pColors[i * 3 + 2] = c.b;
+      }
+      pGeo.attributes.color.needsUpdate = true;
+    }
+
+    renderer.render(scene, camera);
+  }
+  tick();
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth / innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  }, { passive: true });
+}
+</script>
+
+
+
+<script>
+(function(){
+  'use strict';
+
+  // ---------- HEADER SHOW ON SCROLL ----------
+  const header = document.getElementById('siteHeader');
+  let headerScheduled = false;
+  function updateHeader() {
+    headerScheduled = false;
+    const shown = window.scrollY > 60;
+    header.classList.toggle('visible', shown);
+    header.inert = !shown;
+  }
+  addEventListener('scroll', () => {
+    if (!headerScheduled) { headerScheduled = true; requestAnimationFrame(updateHeader); }
+  }, { passive: true });
+  updateHeader();
+
+  // ---------- SCROLL PROGRESS ----------
+  const fill = document.getElementById('navScrollFill');
+  let progScheduled = false;
+  function updateProgress() {
+    progScheduled = false;
+    const total = document.documentElement.scrollHeight - innerHeight;
+    const p = total > 0 ? Math.max(0, Math.min(1, window.scrollY / total)) : 0;
+    fill.style.transform = `scaleX(${p})`;
+  }
+  addEventListener('scroll', () => {
+    if (!progScheduled) { progScheduled = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  updateProgress();
+
+  // ---------- MOBILE MENU ----------
+  const menu = document.getElementById('mobileMenu');
+  const toggle = document.getElementById('menuToggle');
+  function closeMenu() {
+    menu.hidden = true;
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Открыть меню');
+  }
+  toggle.addEventListener('click', () => {
+    const open = menu.hidden;
+    menu.hidden = !open;
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  });
+  menu.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('click', e => {
+    if (!menu.hidden && !e.target.closest('#siteHeader')) closeMenu();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); }
+  });
+
+  // ---------- BACK TOP ----------
+  const backTop = document.getElementById('backTop');
+  let backScheduled = false;
+  function updateBack() {
+    backScheduled = false;
+    backTop.hidden = window.scrollY < 500;
+  }
+  addEventListener('scroll', () => {
+    if (!backScheduled) { backScheduled = true; requestAnimationFrame(updateBack); }
+  }, { passive: true });
+  updateBack();
+  backTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ---------- MODULE PILLS ----------
+  const moduleRoot = document.querySelector('.module-rows');
+  if (moduleRoot) {
+    const pills = [...moduleRoot.querySelectorAll('button.module-pill[data-module]')];
+    const state = {};
+    for (const p of pills) if (!(p.dataset.module in state)) state[p.dataset.module] = p.classList.contains('lit');
+    try {
+      const saved = JSON.parse(localStorage.getItem('jesider-modules-v2') || '{}');
+      if (saved && typeof saved === 'object') {
+        for (const k of Object.keys(state)) if (typeof saved[k] === 'boolean') state[k] = saved[k];
+      }
+    } catch(e) {}
+    function sync(name) {
+      for (const p of pills) {
+        if (p.dataset.module !== name) continue;
+        p.classList.toggle('lit', !!state[name]);
+        p.setAttribute('aria-pressed', String(!!state[name]));
+      }
+    }
+    Object.keys(state).forEach(sync);
+    moduleRoot.addEventListener('click', e => {
+      const p = e.target.closest('button.module-pill[data-module]');
+      if (!p) return;
+      const name = p.dataset.module;
+      state[name] = !state[name];
+      sync(name);
+      try { localStorage.setItem('jesider-modules-v2', JSON.stringify(state)); } catch(e) {}
+    });
+  }
+
+  // ---------- SUPPORT DIALOG ----------
+  const dialog = document.getElementById('supportDialog');
+  const proceed = document.getElementById('supportProceed');
+  const cancel = document.getElementById('supportCancel');
+  let pendingCallback = null;
+  window.openSupportConfirm = function(url, cb) {
+    pendingCallback = cb || null;
+    if (proceed) proceed.href = url;
+    if (dialog && typeof dialog.showModal === 'function') {
+      if (!dialog.open) dialog.showModal();
+      cancel.focus();
+    } else if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      if (pendingCallback) pendingCallback();
+      pendingCallback = null;
+    }
+  };
+  document.addEventListener('click', e => {
+    const a = e.target instanceof Element ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    let u;
+    try { u = new URL(a.href); } catch(err) { return; }
+    if (u.hostname === 't.me' && u.pathname === '/lovechasing' && a !== proceed) {
+      e.preventDefault();
+      window.openSupportConfirm(u.href);
+    }
+  });
+  if (cancel && dialog) cancel.addEventListener('click', () => dialog.close());
+  if (proceed && dialog) proceed.addEventListener('click', () => {
+    if (pendingCallback) pendingCallback();
+    pendingCallback = null;
+    dialog.close();
+  });
+  if (dialog) dialog.addEventListener('close', () => { pendingCallback = null; });
+
+  // ---------- 3D CARD TILT + SPECULAR ----------
+  const isFine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (isFine) {
+    document.querySelectorAll('.card, .step, .price-card').forEach(card => {
+      let raf = 0;
+      let target = { rx: 0, ry: 0 };
+      let current = { rx: 0, ry: 0 };
+      function animate() {
+        raf = 0;
+        current.rx += (target.rx - current.rx) * 0.16;
+        current.ry += (target.ry - current.ry) * 0.16;
+        card.style.transform = `perspective(1100px) rotateX(${current.rx.toFixed(2)}deg) rotateY(${current.ry.toFixed(2)}deg) translateY(${(current.rx + current.ry).toFixed(2)}px)`;
+        if (Math.abs(target.rx - current.rx) > 0.05 || Math.abs(target.ry - current.ry) > 0.05) {
+          raf = requestAnimationFrame(animate);
+        }
+      }
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+        target.ry = ((x / r.width) - 0.5) * 10;
+        target.rx = -((y / r.height) - 0.5) * 10;
+        if (!raf) raf = requestAnimationFrame(animate);
+      });
+      card.addEventListener('pointerleave', () => {
+        target.rx = 0; target.ry = 0;
+        if (!raf) raf = requestAnimationFrame(animate);
+      });
+    });
+  }
+
+  // ---------- REVEAL ON SCROLL ----------
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+})();
+</script>
+
+</body>
+</html>
